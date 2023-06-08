@@ -1,0 +1,31 @@
+# Install nix
+curl -L https://nixos.org/nix/install | sh
+
+# Source nix
+. ~/.nix-profile/etc/profile.d/nix.sh
+
+# Home manager
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+nix-channel --update
+
+nix-shell '<home-manager>' -A install
+home-manager switch
+
+# Stow dotfiles
+stow home-manager
+stow starship
+stow nvim
+stow tmux
+stow zsh
+
+# Install nvim plugins
+nvim --headless -c "so ~/.config/nvim/lua/theprimeagen/packer.lua | execute 'PackerSync' | execute 'qall'"
+
+# Add zsh as a login shell
+command -v zsh | sudo tee -a /etc/shells
+
+# Use zsh as default shell
+sudo chsh -s $(which zsh) $USER
+
+# Bundle zsh plugins
+antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
