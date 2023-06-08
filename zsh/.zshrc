@@ -24,3 +24,5 @@ if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile
 
 # Starship
 eval "$(starship init zsh)"
+
+if [ -e /home/pollo/.nix-profile/etc/profile.d/nix.sh ]; then . /home/pollo/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
