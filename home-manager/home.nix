@@ -14,13 +14,7 @@
 	stow
 	fzf ripgrep
     nodejs_18 lua
-	neovim tmux
+	tmux
 	(nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Meslo" ]; })
   ];
-
-  programs.git = {
-	enable = true;
-    	userName = "victormhp";
-    	userEmail = "victoralbertomhp@gmail.com";
-  };
 }
