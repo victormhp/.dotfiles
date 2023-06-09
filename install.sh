@@ -15,18 +15,14 @@ home-manager switch
 
 # Stow dotfiles
 stow starship
-stow nvim
 stow tmux
 stow zsh
-
-# Install nvim plugins
-nvim --headless -c "so ~/.config/nvim/lua/theprimeagen/packer.lua | execute 'PackerSync' | execute 'qall'"
 
 # Add zsh as a login shell
 command -v zsh | sudo tee -a /etc/shells
 
 # Use zsh as default shell
-sudo chsh -s $(which zsh) $(whoami) 
+sudo chsh -s $(which zsh) $(whoami)
 
 # Bundle zsh plugins
 antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
