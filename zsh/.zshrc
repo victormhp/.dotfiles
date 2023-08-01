@@ -5,7 +5,6 @@ export NVM_COMPLETION=true
 
 source ${HOME}/.zsh_plugins.sh
 
-
 # Alias
 alias cls="clear"
 alias vi=nvim
@@ -17,12 +16,8 @@ alias ll="exa -l --icons"
 alias la="exa -la --icons"
 alias lt="exa --tree --level=2 --icons"
 
-alias update-antibody='antibody bundle < $HOME/.zsh_plugins.txt > $HOME/.zsh_plugins.sh'
-
-# Nix
-if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi
+alias zplugins='antibody bundle < $HOME/.zsh_plugins.txt > $HOME/.zsh_plugins.sh'
 
 # Starship
 eval "$(starship init zsh)"
 
-if [ -e /home/pollo/.nix-profile/etc/profile.d/nix.sh ]; then . /home/pollo/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

@@ -1,28 +1,20 @@
-# Install nix
-sh <(curl -L https://nixos.org/nix/install) --no-daemon
+#!/bin/bash
 
-# Source nix
-. ~/.nix-profile/etc/profile.d/nix.sh
+set -euo pipefail
 
-# Home manager
-nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-nix-channel --update
-nix-shell '<home-manager>' -A install
+source './utils.sh'
 
-# Copy home.nix
-cp ./home-manager/home.nix ~/.config/home-manager/
-home-manager switch
+# Link entire configuration folders
+link_same        "$(pwd)/alacritty"       "$HOME/.config/alacritty"
 
-# Stow dotfiles
-stow starship
-stow tmux
-stow zsh
+# Link just files instead of entire folders to avoid
+# polluting this dotfiles directory with generated files
+link_same_files  "$(pwd)/nvim"            "$HOME/.config/nvim"
 
-# Add zsh as a login shell
-command -v zsh | sudo tee -a /etc/shells
+# Link just one file
+link_same_single "$(pwd)" '.tmux.conf'    "$HOME"
+link_same_single "$(pwd)/zsh" '.zshrc'    "$HOME"
+link_same_single "$(pwd)/zsh" '.zsh_plugins.txt'    "$HOME"
+link_same_single "$(pwd)" '$HOME/.config/starship.toml' "$HOME"
 
-# Use zsh as default shell
-sudo chsh -s $(which zsh) $(whoami)
-
-# Bundle zsh plugins
-antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
+echo -e "\033[0;32mLinked all configuration files\033[0m"
