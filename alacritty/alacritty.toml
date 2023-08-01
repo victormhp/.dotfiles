@@ -51,3 +51,7 @@ decorations = "none"
 dynamic_title = true
 opacity = 0.9
 startup_mode = "Maximized"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+
