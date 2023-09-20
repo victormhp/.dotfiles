@@ -15,6 +15,3 @@ done
 
 nitrogen --restore &
 picom
-
-$HOME/.config/polybar/launch.sh &
-
