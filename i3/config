@@ -6,7 +6,7 @@ include ./workspaces.conf
 # tools
 set $terminal alacritty
 set $file_manager nautilus
-set $launcher "~/.config/polybar/material/scripts/launcher.sh"
+set $launcher rofi -show drun 
 set $mod Mod4
 
 # bordergap
