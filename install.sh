@@ -16,7 +16,8 @@ link_same_files  "$(pwd)/vscode"       "$HOME/.config/Code - Insiders/User"
 link_same_files  "$(pwd)/i3"              "$HOME/.config/i3"
 
 # Link just one file
-link_same_single "$(pwd)" '.tmux.conf'    "$HOME"
+link_same_single "$(pwd)/tmux" '.tmux.conf'    "$HOME"
+link_same_single "$(pwd)/tmux" 'tmux-sessionizer'    "$HOME/.local/bin"
 link_same_single "$(pwd)/zsh" '.zshrc'    "$HOME"
 link_same_single "$(pwd)/zsh" '.zsh_plugins.txt'    "$HOME"
 link_same_single "$(pwd)" 'starship.toml' "$HOME/.config"
