@@ -17,6 +17,7 @@ alias lt="exa --tree --level=2 --icons"
 
 # tmux-sessionizer
 bindkey -s "^f" "tmux-sessionizer\n"
+bindkey -s "^g" "tmux-cht\n"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
