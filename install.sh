@@ -12,7 +12,7 @@ link_same        "$(pwd)/rofi"           "$HOME/.config/rofi"
 # Link just files instead of entire folders to avoid
 # polluting this dotfiles directory with generated files
 link_same_files  "$(pwd)/nvim"            "$HOME/.config/nvim"
-link_same_files  "$(pwd)/vscode"       "$HOME/.config/Code - Insiders/User"
+link_same_files  "$(pwd)/vscode"       "$HOME/.config/Code/User"
 link_same_files  "$(pwd)/i3"              "$HOME/.config/i3"
 
 # Link just one file

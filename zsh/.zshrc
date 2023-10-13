@@ -29,3 +29,7 @@ antidote load
 
 # Starship 
 eval "$(starship init zsh)"
+-e 
+alias luamake=/home/pollo/workspace/sumneko/3rd/luamake/luamake
+source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+antidote load
