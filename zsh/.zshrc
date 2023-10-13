@@ -21,15 +21,11 @@ bindkey -s "^f" "tmux-sessionizer\n"
 # scripts directory
 export PATH="$HOME/.local/bin:$PATH"
 
-# source antidote
-source ${ZDOTDIR:-~}/.antidote/antidote.zsh
-
-# initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
-antidote load
-
 # Starship 
 eval "$(starship init zsh)"
--e 
+
 alias luamake=/home/pollo/workspace/sumneko/3rd/luamake/luamake
+
+# source antidote
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load

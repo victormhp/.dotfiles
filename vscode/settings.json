@@ -1,7 +1,6 @@
 {
   "workbench.sideBar.location": "right",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Rosé Pine",
   "workbench.colorCustomizations": {
     "[Rosé Pine Dawn]": {
       "titleBar.activeBackground": "#191919cc",
@@ -119,5 +118,6 @@
   "prettier.printWidth": 100,
   "svelte.plugin.svelte.format.config.printWidth": 100,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "liveServer.settings.donotVerifyTags": true
+  "liveServer.settings.donotVerifyTags": true,
+  "workbench.colorTheme": "Rosé Pine"
 }
