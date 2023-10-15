@@ -18,7 +18,7 @@ alias lt="exa --tree --level=2 --icons"
 # tmux-sessionizer
 bindkey -s "^f" "tmux-sessionizer\n"
 
-# scripts directory
+# paths
 export PATH="$HOME/.local/bin:$PATH"
 
 # Starship 
@@ -29,3 +29,19 @@ alias luamake=/home/pollo/workspace/sumneko/3rd/luamake/luamake
 # source antidote
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/pollo/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/pollo/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/pollo/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/pollo/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

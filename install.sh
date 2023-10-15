@@ -6,6 +6,7 @@ source './utils.sh'
 
 # Link entire configuration folders
 link_same        "$(pwd)/alacritty"       "$HOME/.config/alacritty"
+link_same        "$(pwd)/awesome"       "$HOME/.config/awesome"
 link_same        "$(pwd)/picom"           "$HOME/.config/picom"
 link_same        "$(pwd)/rofi"           "$HOME/.config/rofi"
 
