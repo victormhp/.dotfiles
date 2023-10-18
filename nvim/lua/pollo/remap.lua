@@ -7,6 +7,7 @@ vim.keymap.set('t', '<esc>', "<C-\\><C-n>",{silent = true})
 
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>q", vim.cmd.q)
+vim.keymap.set("v", "<C-c>", '"+y')
 
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
