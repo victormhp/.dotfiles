@@ -8,7 +8,6 @@
     }
   },
   "window.titleBarStyle": "custom",
-  "workbench.activityBar.visible": false,
   "workbench.startupEditor": "none",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "css.lint.unknownAtRules": "ignore",
@@ -119,5 +118,6 @@
   "svelte.plugin.svelte.format.config.printWidth": 100,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "liveServer.settings.donotVerifyTags": true,
-  "workbench.colorTheme": "Rosé Pine"
+  "workbench.colorTheme": "Rosé Pine",
+  "terminal.integrated.inheritEnv": false
 }

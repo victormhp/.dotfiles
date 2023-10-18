@@ -20,6 +20,7 @@ bindkey -s "^f" "tmux-sessionizer\n"
 
 # paths
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:/usr/bin/obsidian"
 
 # Starship 
 eval "$(starship init zsh)"

@@ -49,7 +49,9 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua", {
+    border_width = 0,
+})
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
@@ -585,4 +587,4 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- Autostart applications
 awful.spawn.with_shell("picom")
 awful.spawn.with_shell("nitrogen --restore")
-awful.spawn.with_shell("./monitors.sh")
+awful.spawn.with_shell("$HOME/.config/awesome/monitors.sh")
