@@ -1,5 +1,4 @@
 {
-  "workbench.sideBar.location": "right",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorCustomizations": {
     "[Rosé Pine Dawn]": {
@@ -131,5 +130,7 @@
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": "off"
-  }
+  },
+  "workbench.sideBar.location": "right",
+  "git.openRepositoryInParentFolders": "never"
 }

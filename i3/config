@@ -6,8 +6,13 @@ include ./workspaces.conf
 # tools
 set $terminal alacritty
 set $file_manager nautilus
-set $launcher rofi -show drun 
+set $launcher ~/.config/polybar/scripts/launcher.sh &
+set $powermenu ~/.config/polybar/scripts/powermenu.sh &
 set $mod Mod4
+
+# gaps
+gaps outer -3
+gaps inner 6
 
 # bordergap
 for_window [class=".*"] border pixel 0
@@ -70,6 +75,9 @@ bindsym $mod+e exec $file_manager
 
 # start search bar
 bindsym $mod+space exec $launcher
+
+# start power menu
+bindsym $mod+y exec $powermenu
 
 # kill focused window
 bindsym $mod+q kill
@@ -204,26 +212,5 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-# system logout
-set $mode_system System (l) lock, (e) logout, (r) reboot, (Shift+s) shutdown
-mode "$mode_system" {
-    bindsym l exec --no-startup-id $Locker, mode "default"
-    bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
-
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-bindsym $mod+y mode "$mode_system"
-
-# autostart
-bar {
-    position top
-    status_command i3status
-}
 
 exec_always --no-startup-id ~/.config/i3/autostart.sh

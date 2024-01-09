@@ -14,4 +14,8 @@ for monitor in $connected_monitors; do
 done
 
 nitrogen --restore &
+
+killall polybar
+polybar -c /home/pollo/.config/polybar/config.ini &
+
 picom

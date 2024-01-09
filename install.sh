@@ -8,7 +8,7 @@ source './utils.sh'
 link_same        "$(pwd)/alacritty"       "$HOME/.config/alacritty"
 link_same        "$(pwd)/awesome"       "$HOME/.config/awesome"
 link_same        "$(pwd)/picom"           "$HOME/.config/picom"
-link_same        "$(pwd)/rofi"           "$HOME/.config/rofi"
+link_same        "$(pwd)/polybar"           "$HOME/.config/polybar"
 link_same        "$(pwd)/wallpapers"           "$HOME/wallpapers"
 
 # Link just files instead of entire folders to avoid
