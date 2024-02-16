@@ -8,6 +8,7 @@ set $terminal alacritty
 set $file_manager nautilus
 set $launcher ~/.config/polybar/scripts/launcher.sh &
 set $powermenu ~/.config/polybar/scripts/powermenu.sh &
+set $bluetoothmenu ~/.config/polybar/scripts/bluetoothmenu.sh &
 set $mod Mod4
 
 # gaps
@@ -74,6 +75,9 @@ bindsym $mod+space exec $launcher
 
 # start power menu
 bindsym $mod+y exec $powermenu
+
+# start bluetooth menu
+bindsym $mod+b exec $bluetoothmenu
 
 # kill focused window
 bindsym $mod+q kill
