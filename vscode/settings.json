@@ -132,5 +132,6 @@
     "editor.wordBasedSuggestions": "off"
   },
   "workbench.sideBar.location": "right",
-  "git.openRepositoryInParentFolders": "never"
+  "git.openRepositoryInParentFolders": "never",
+  "python.defaultInterpreterPath": "/home/pollo/workspace/data-analysis/cf-ml-project/venv"
 }
