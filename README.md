@@ -13,3 +13,9 @@ This repository contains the configuration files for various tools and applicati
 - Picom
 - Alacritty
 - zsh
+
+## Resources
+
+- [Material Polybar Theme](https://github.com/adi1090x/polybar-themes)
+
+- [Rofi Bluetooth](https://github.com/nickclyde/rofi-bluetooth)
