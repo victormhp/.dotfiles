@@ -1,7 +1,7 @@
 -- LSP Configuration & Plugins
 return {
 	{
-		'neovim/nvim-lspconfig',
+		"neovim/nvim-lspconfig",
 		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
@@ -43,7 +43,7 @@ return {
 
 			-- Diagnostic config
 			local config = {
-				virtual_text = false,
+				virtual_text = true,
 				signs = {
 					active = signs,
 				},
@@ -122,7 +122,7 @@ return {
 						plugins = {
 							flake8 = {
 								enabled = true,
-								maxLineLength = 120, -- Black's line length
+								maxLineLength = 100, -- Black's line length
 							},
 							-- Disable plugins overlapping with flake8
 							pycodestyle = {
@@ -143,23 +143,41 @@ return {
 				},
 			})
 
+			-- Typescript
+			require("lspconfig")["tsserver"].setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+			})
+
 			-- HTML
-			require("lspconfig")["html"].setup({})
+			require("lspconfig")["html"].setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+			})
 
 			-- CSS
-			require("lspconfig")["cssls"].setup({})
+			require("lspconfig")["cssls"].setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+			})
 
 			-- Tailwind
-			require("lspconfig")["tailwindcss"].setup({})
-
-			-- Typescript
-			require("lspconfig")["tsserver"].setup({})
+			require("lspconfig")["tailwindcss"].setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+			})
 
 			-- Svelte
-			require("lspconfig")["svelte"].setup({})
+			require("lspconfig")["svelte"].setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+			})
 
 			-- Astro
-			require("lspconfig")["astro"].setup({})
+			require("lspconfig")["astro"].setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+			})
 		end,
 	},
 }

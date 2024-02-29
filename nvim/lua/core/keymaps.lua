@@ -1,5 +1,8 @@
 local map = require("helpers.keys").map
 
+-- Blazingly fast way out of insert mode
+map("i", "jj", "<esc>")
+
 -- Quick access to some common actions
 map("n", "<leader>fw", "<cmd>w<cr>", "Write")
 map("n", "<leader>fa", "<cmd>wa<cr>", "Write all")
@@ -55,7 +58,7 @@ map("v", "<C-c>", '"+y')
 map("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/lua/core/keymaps.lua<CR>")
 
 -- Greates remap ever
-map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-map("n", "<leader>l", [[:s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+-- map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+-- map("n", "<leader>l", [[:s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>")
 

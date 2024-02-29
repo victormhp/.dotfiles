@@ -3,6 +3,7 @@ local opts = {
 	tabstop = 4,
 	expandtab = true,
 	wrap = false,
+	colorcolumn = "100",
 	termguicolors = true,
 	number = true,
 	relativenumber = true,
