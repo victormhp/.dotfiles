@@ -21,6 +21,8 @@ return {
 				ensure_installed = {
 					"lua_ls",
 					"pylsp",
+					"tsserver",
+					"gopls",
 				},
 				automatic_installation = true,
 			})
@@ -62,6 +64,7 @@ return {
 			vim.diagnostic.config(config)
 
 			-- This function gets run when an LSP connects to a particular buffer.
+			local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 			local on_attach = function(client, bufnr)
 				local lsp_map = require("helpers.keys").lsp_map
 
@@ -81,6 +84,21 @@ return {
 					vim.lsp.buf.format()
 				end, { desc = "Format current buffer with LSP" })
 
+				-- Format on save
+				if client.supports_method("textDocuemnt/formatting") then
+					vim.api.nvim_clear_autocmds({
+						group = augroup,
+						buffer = bufnr,
+					})
+					vim.api.nvim_create_autocmd("BufWritePre", {
+						group = augroup,
+						buffer = bufnr,
+						callback = function()
+							vim.lsp.buf.format({ bufnr = bufnr })
+						end,
+					})
+				end
+
 				lsp_map("<leader>ff", "<cmd>Format<cr>", bufnr, "Format")
 
 				-- Attach and configure vim-illuminate
@@ -91,8 +109,9 @@ return {
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
+			local lspconfig = require("lspconfig")
 			-- Lua
-			require("lspconfig")["lua_ls"].setup({
+			lspconfig["lua_ls"].setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
 				settings = {
@@ -114,7 +133,7 @@ return {
 			})
 
 			-- Python
-			require("lspconfig")["pylsp"].setup({
+			lspconfig["pylsp"].setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
 				settings = {
@@ -143,38 +162,45 @@ return {
 				},
 			})
 
+			-- Go
+			lspconfig["gopls"].setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+				filetypes = { "go", "gomod", "gowork", "gotempl" },
+			})
+
 			-- Typescript
-			require("lspconfig")["tsserver"].setup({
+			lspconfig["tsserver"].setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
 			})
 
 			-- HTML
-			require("lspconfig")["html"].setup({
+			lspconfig["html"].setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
 			})
 
 			-- CSS
-			require("lspconfig")["cssls"].setup({
+			lspconfig["cssls"].setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
 			})
 
 			-- Tailwind
-			require("lspconfig")["tailwindcss"].setup({
+			lspconfig["tailwindcss"].setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
 			})
 
 			-- Svelte
-			require("lspconfig")["svelte"].setup({
+			lspconfig["svelte"].setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
 			})
 
 			-- Astro
-			require("lspconfig")["astro"].setup({
+			lspconfig["astro"].setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
 			})
