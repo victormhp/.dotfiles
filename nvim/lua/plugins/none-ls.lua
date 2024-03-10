@@ -24,7 +24,9 @@ return {
 					formatting.goimports_reviser,
 					formatting.golines,
 					-- TS
-					formatting.prettier,
+					formatting.prettier.with({
+						only_local = "node_modules/.bin",
+					}),
 					require("none-ls.diagnostics.eslint").with({
 						only_local = "node_modules/.bin",
 					}),

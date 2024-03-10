@@ -6,3 +6,6 @@ require("core.keymaps")
 
 -- Other options
 require("core.options")
+
+-- Colorizer
+require("colorizer").setup()

@@ -84,21 +84,6 @@ return {
 					vim.lsp.buf.format()
 				end, { desc = "Format current buffer with LSP" })
 
-				-- Format on save
-				if client.supports_method("textDocuemnt/formatting") then
-					vim.api.nvim_clear_autocmds({
-						group = augroup,
-						buffer = bufnr,
-					})
-					vim.api.nvim_create_autocmd("BufWritePre", {
-						group = augroup,
-						buffer = bufnr,
-						callback = function()
-							vim.lsp.buf.format({ bufnr = bufnr })
-						end,
-					})
-				end
-
 				lsp_map("<leader>ff", "<cmd>Format<cr>", bufnr, "Format")
 
 				-- Attach and configure vim-illuminate
@@ -185,6 +170,20 @@ return {
 			lspconfig["cssls"].setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
+				settings = {
+					css = {
+						validate = true,
+						lint = {
+							unknownAtRules = "ignore",
+						},
+					},
+					scss = {
+						validate = true,
+						lint = {
+							unknownAtRules = "ignore",
+						},
+					},
+				},
 			})
 
 			-- Tailwind

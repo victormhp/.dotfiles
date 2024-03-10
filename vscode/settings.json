@@ -133,5 +133,15 @@
   },
   "workbench.sideBar.location": "right",
   "git.openRepositoryInParentFolders": "never",
-  "python.defaultInterpreterPath": "/home/pollo/workspace/data-analysis/cf-ml-project/venv"
+  "python.defaultInterpreterPath": "/home/pollo/workspace/data-analysis/cf-ml-project/venv",
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "vue",
+    "markdown",
+    "svelte"
+  ]
 }
