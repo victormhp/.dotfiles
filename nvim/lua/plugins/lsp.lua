@@ -126,7 +126,7 @@ return {
 						plugins = {
 							flake8 = {
 								enabled = true,
-								maxLineLength = 100, -- Black's line length
+								maxLineLength = 100,
 							},
 							-- Disable plugins overlapping with flake8
 							pycodestyle = {
@@ -154,6 +154,23 @@ return {
 				filetypes = { "go", "gomod", "gowork", "gotempl" },
 			})
 
+			-- Templ
+			lspconfig["templ"].setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+			})
+			vim.filetype.add({ extension = { templ = "templ" } })
+
+			-- C
+			lspconfig["clangd"].setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+				cmd = {
+					"clangd",
+					"--fallback-style=webkit",
+				},
+			})
+
 			-- Typescript
 			lspconfig["tsserver"].setup({
 				on_attach = on_attach,
@@ -164,6 +181,7 @@ return {
 			lspconfig["html"].setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
+				filetypes = { "html", "tmpl", "templ" },
 			})
 
 			-- CSS
@@ -190,6 +208,8 @@ return {
 			lspconfig["tailwindcss"].setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
+				filetypes = { "templ", "astro", "javascript", "typescript", "react", "svelte" },
+				init_options = { userLanguages = { templ = "html" } },
 			})
 
 			-- Svelte

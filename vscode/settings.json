@@ -143,5 +143,6 @@
     "vue",
     "markdown",
     "svelte"
-  ]
+  ],
+  "cmake.showOptionsMovedNotification": false
 }

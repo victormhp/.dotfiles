@@ -14,8 +14,6 @@ return {
 				sources = {
 					-- Lua
 					formatting.stylua,
-					-- C
-					formatting.clang_format,
 					-- Python
 					formatting.black,
 					formatting.isort,
