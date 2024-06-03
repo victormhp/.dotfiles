@@ -71,6 +71,7 @@ return {
 				lsp_map("<leader>lr", vim.lsp.buf.rename, bufnr, "Rename symbol")
 				lsp_map("<leader>la", vim.lsp.buf.code_action, bufnr, "Code action")
 				lsp_map("<leader>ld", vim.lsp.buf.type_definition, bufnr, "Type definition")
+				lsp_map("<leader>ln", vim.lsp.buf.signature_help, bufnr, "Signature Help")
 				lsp_map("<leader>ls", require("telescope.builtin").lsp_document_symbols, bufnr, "Document symbols")
 
 				lsp_map("gd", vim.lsp.buf.definition, bufnr, "Goto Definition")
