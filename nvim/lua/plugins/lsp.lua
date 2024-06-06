@@ -172,6 +172,12 @@ return {
 				},
 			})
 
+			-- Rust
+			lspconfig["rust_analyzer"].setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+			})
+
 			-- Typescript
 			lspconfig["tsserver"].setup({
 				on_attach = on_attach,
