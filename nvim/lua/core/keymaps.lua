@@ -62,3 +62,6 @@ map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 map("n", "<leader>l", [[:s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>")
 
+-- Markdown
+map("n", "<leader>mk", "<cmd>MarkdownPreview<CR>")
+map("n", "<leader>ms", "<cmd>MarkdownStop<CR>")
