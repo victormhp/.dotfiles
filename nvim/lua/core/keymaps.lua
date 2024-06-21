@@ -64,4 +64,5 @@ map("n", "<leader>x", "<cmd>!chmod +x %<CR>")
 
 -- Markdown
 map("n", "<leader>mk", "<cmd>MarkdownPreview<CR>")
-map("n", "<leader>ms", "<cmd>MarkdownStop<CR>")
+map("n", "<leader>ms", "<cmd>MarkdownPreviewStop<CR>")
+map("n", "<leader>mt", "<cmd>MarkdownPreviewToggle<CR>")
