@@ -9,6 +9,7 @@ set $file_manager nautilus
 set $launcher ~/.config/polybar/scripts/launcher.sh &
 set $powermenu ~/.config/polybar/scripts/powermenu.sh &
 set $bluetoothmenu ~/.config/polybar/scripts/bluetoothmenu.sh &
+set $networkmenu networkmanager_dmenu &
 set $mod Mod4
 
 # gaps
@@ -90,6 +91,9 @@ bindsym $mod+y exec $powermenu
 
 # start bluetooth menu
 bindsym $mod+b exec $bluetoothmenu
+
+# start network menu
+bindsym $mod+n exec $networkmenu
 
 # kill focused window
 bindsym $mod+q kill
