@@ -13,7 +13,8 @@ set $mod Mod4
 
 # gaps
 gaps outer -3
-gaps inner 6
+gaps inner 8
+gaps top 34
 
 # bordergap
 for_window [class=".*"] border pixel 0
