@@ -2,11 +2,14 @@ local opts = {
 	shiftwidth = 4,
 	tabstop = 4,
 	expandtab = true,
-	wrap = false,
-	colorcolumn = "100",
-	termguicolors = true,
 	number = true,
 	relativenumber = true,
+	textwidth=0,
+	wrapmargin=0,
+	wrap = true,
+	linebreak = true,
+	colorcolumn = "100",
+	termguicolors = true,
 }
 
 -- Set options from table
