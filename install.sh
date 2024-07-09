@@ -4,6 +4,9 @@ set -euo pipefail
 
 source './utils.sh'
 
+# Install polybar fonts
+install_fonts
+
 # Link entire configuration folders
 link_same        "$(pwd)/alacritty"       "$HOME/.config/alacritty"
 link_same        "$(pwd)/picom"           "$HOME/.config/picom"

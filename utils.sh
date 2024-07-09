@@ -35,3 +35,41 @@ link_same_files() {
 link_same_single() {
   link_same "$1/$2" "$3/$2"
 }
+
+DIR="$HOME/.dotfiles/polybar"
+FDIR="$HOME/.local/share/fonts"
+
+install_fonts() {
+    echo -e "\n[*] Installing fonts..."
+    
+    # Create font directory if it doesn't exist
+    if [[ ! -d "$FDIR" ]]; then
+        mkdir -p "$FDIR"
+        echo "Created font directory: $FDIR"
+    fi
+
+    # Check if source font directory exists
+    if [[ ! -d "$DIR/fonts" ]]; then
+        echo "Error: Font source directory not found: $DIR/fonts"
+        return 1
+    fi
+
+    # Copy fonts
+    if cp -rf "$DIR"/fonts/* "$FDIR"; then
+        echo "Fonts copied successfully to $FDIR"
+    else
+        echo "Error: Failed to copy fonts"
+        return 1
+    fi
+
+    # Update font cache
+    if command -v fc-cache >/dev/null 2>&1; then
+        echo "Updating font cache..."
+        fc-cache -f "$FDIR"
+    else
+        echo "Warning: fc-cache not found. Font cache not updated."
+    fi
+
+    echo "Font installation completed."
+}
+
