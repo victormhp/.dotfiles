@@ -197,9 +197,9 @@ print_status() {
                 device_alias=$(bluetoothctl info "$device" | grep "Alias" | cut -d ' ' -f 2-)
 
                 if [ $counter -gt 0 ]; then
-                    printf ", %s" "$device_alias"
+                    printf "%s"
                 else
-                    printf " %s" "$device_alias"
+                    printf "%s"
                 fi
 
                 ((counter++))
