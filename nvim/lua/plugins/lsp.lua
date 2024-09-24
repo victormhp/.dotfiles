@@ -20,9 +20,7 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
-					"pylsp",
-					"tsserver",
-					"gopls",
+					"ts_ls",
 				},
 				automatic_installation = true,
 			})
@@ -179,7 +177,7 @@ return {
 			})
 
 			-- Typescript
-			lspconfig["tsserver"].setup({
+			lspconfig["ts_ls"].setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
 			})
