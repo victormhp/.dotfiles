@@ -1,7 +1,3 @@
-import = [
-  "~/.config/alacritty/rose-pine.toml"
-]
-
 [window]
 dynamic_title = true
 padding = { x = 5, y = 5 }
@@ -14,3 +10,8 @@ family = "JetBrainsMono Nerd Font"
 
 [env]
 term = "xterm-256color"
+
+[general]
+import = [
+  "~/.config/alacritty/rose-pine.toml"
+]
