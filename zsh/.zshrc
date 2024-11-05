@@ -1,8 +1,3 @@
-# Export nvm completion settings for lukechilds/zsh-nvm plugin
-# Note: This must be exported before the plugin is bundled
-export NVM_DIR=${HOME}/.nvm
-export NVM_COMPLETION=true
-
 # Alias
 alias c="clear"
 alias cls="clear"
@@ -43,10 +38,9 @@ alias luamake=/home/pollo/workspace/sumneko/3rd/luamake/luamake
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-source ${ZDOTDIR:-~}/.antidote/antidote.zsh
-antidote load
-source ${ZDOTDIR:-~}/.antidote/antidote.zsh
-antidote load
+# fnm
+FNM_PATH="/home/pollo/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/pollo/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
