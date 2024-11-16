@@ -4,8 +4,8 @@ local map = require("helpers.keys").map
 map("i", "jj", "<esc>")
 
 -- Quick access to some common actions
-map("n", "<leader>fw", "<cmd>w<cr>", "Write")
-map("n", "<leader>fa", "<cmd>wa<cr>", "Write all")
+map("n", "<leader>ww", "<cmd>w<cr>", "Write")
+map("n", "<leader>wa", "<cmd>wa<cr>", "Write all")
 map("n", "<leader>qq", "<cmd>q<cr>", "Quit")
 map("n", "<leader>qa", "<cmd>qa!<cr>", "Quit all")
 map("n", "<leader>dw", "<cmd>close<cr>", "Window")
