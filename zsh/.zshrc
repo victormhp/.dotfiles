@@ -7,10 +7,10 @@ alias jn="jupyter notebook"
 alias ls="ls --color=auto"
 alias cat="batcat"
 
-alias l="exa --icons"
-alias ll="exa -l --icons"
-alias la="exa -la --icons"
-alias lt="exa --tree --level=2 --icons"
+alias l="exa --icons -s type"
+alias ll="exa -l --icons -s type"
+alias la="exa -la --icons -s type"
+alias lt="exa --tree --level=2 --icons -s type"
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
