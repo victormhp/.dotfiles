@@ -11,7 +11,7 @@ This repository contains the configuration files for various tools and applicati
 - Polybar
 - Rofi
 - Picom
-- Alacritty
+- Ghostty
 - zsh
 
 ## Resources
