@@ -8,7 +8,7 @@ source './utils.sh'
 install_fonts
 
 # Link entire configuration folders
-link_same        "$(pwd)/alacritty"       "$HOME/.config/alacritty"
+link_same        "$(pwd)/ghostty"       "$HOME/.config/ghostty"
 link_same        "$(pwd)/picom"           "$HOME/.config/picom"
 link_same        "$(pwd)/polybar"           "$HOME/.config/polybar"
 link_same        "$(pwd)/networkmanager-dmenu"           "$HOME/.config/networkmanager-dmenu"
