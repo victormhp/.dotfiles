@@ -12,6 +12,8 @@ alias ll="exa -l --icons -s type"
 alias la="exa -la --icons -s type"
 alias lt="exa --tree --level=2 --icons -s type"
 
+alias copy="xclip -selection cliboard"
+
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
