@@ -6,25 +6,12 @@ include ./workspaces.conf
 # tools
 set $terminal ghostty
 set $file_manager nautilus
-set $launcher ~/.config/polybar/scripts/launcher.sh &
+set $launcher ~/.config/rofi/launcher.sh &
 set $powermenu ~/.config/polybar/scripts/powermenu.sh &
-set $bluetoothmenu ~/.config/polybar/scripts/bluetoothmenu.sh &
-set $networkmenu networkmanager_dmenu &
 set $mod Mod4
-
-# gaps
-gaps outer -3
-gaps inner 10
-gaps top 33
 
 # bordergap
 for_window [class=".*"] border pixel 0
-
-# android emulator
-for_window [title="^Android Emulator*"] floating enable
-
-# zoom
-for_window [title="^zoom$"] floating enable
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -84,12 +71,6 @@ bindsym $mod+space exec $launcher
 
 # start power menu
 bindsym $mod+y exec $powermenu
-
-# start bluetooth menu
-bindsym $mod+b exec $bluetoothmenu
-
-# start network menu
-bindsym $mod+n exec $networkmenu
 
 # kill focused window
 bindsym $mod+q kill
@@ -221,5 +202,11 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+bar {
+    font pango:Roboto 10
+    position top
+    status_command i3status
+}
 
 exec_always --no-startup-id ~/.config/i3/autostart.sh

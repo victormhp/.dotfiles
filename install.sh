@@ -4,14 +4,11 @@ set -euo pipefail
 
 source './utils.sh'
 
-# Install polybar fonts
-install_fonts
-
 # Link entire configuration folders
 link_same        "$(pwd)/ghostty"       "$HOME/.config/ghostty"
 link_same        "$(pwd)/picom"           "$HOME/.config/picom"
 link_same        "$(pwd)/polybar"           "$HOME/.config/polybar"
-link_same        "$(pwd)/networkmanager-dmenu"           "$HOME/.config/networkmanager-dmenu"
+link_same        "$(pwd)/rofi"           "$HOME/.config/rofi"
 link_same        "$(pwd)/wallpapers"           "$HOME/Pictures/wallpapers"
 
 # Link just files instead of entire folders to avoid
@@ -26,6 +23,6 @@ link_same_single "$(pwd)/scripts" 'tmux-sessionizer'    "$HOME/.local/bin"
 link_same_single "$(pwd)/scripts" 'tmux-cht'    "$HOME/.local/bin"
 link_same_single "$(pwd)/zsh" '.zshrc'    "$HOME"
 link_same_single "$(pwd)/zsh" '.zsh_plugins.txt'    "$HOME"
-link_same_single "$(pwd)" 'starship.toml' "$HOME/.config"
+link_same_single "$(pwd)/zsh/starship.toml' "$HOME/.config"
 
 echo -e "\033[0;32mLinked all configuration files\033[0m"
