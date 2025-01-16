@@ -18,6 +18,7 @@ alias copy="xclip -selection cliboard"
 bindkey -s "^f" "tmux-sessionizer\n"
 
 # paths
+export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/go/bin
 export PATH="$PATH:/opt/nvim-linux64/bin:$NVIMPATH/nvim"
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
