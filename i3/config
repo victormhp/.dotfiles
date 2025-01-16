@@ -4,7 +4,7 @@ set $sm eDP
 include ./workspaces.conf
 
 # tools
-set $terminal alacritty
+set $terminal ghostty
 set $file_manager nautilus
 set $launcher ~/.config/polybar/scripts/launcher.sh &
 set $powermenu ~/.config/polybar/scripts/powermenu.sh &
