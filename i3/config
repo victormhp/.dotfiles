@@ -7,7 +7,6 @@ include ./workspaces.conf
 set $terminal ghostty
 set $file_manager nautilus
 set $launcher ~/.config/rofi/launcher.sh &
-set $powermenu ~/.config/polybar/scripts/powermenu.sh &
 set $mod Mod4
 
 # bordergap
@@ -68,9 +67,6 @@ bindsym $mod+e exec $file_manager
 
 # start search bar
 bindsym $mod+space exec $launcher
-
-# start power menu
-bindsym $mod+y exec $powermenu
 
 # kill focused window
 bindsym $mod+q kill
