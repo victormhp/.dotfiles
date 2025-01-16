@@ -23,6 +23,6 @@ link_same_single "$(pwd)/scripts" 'tmux-sessionizer'    "$HOME/.local/bin"
 link_same_single "$(pwd)/scripts" 'tmux-cht'    "$HOME/.local/bin"
 link_same_single "$(pwd)/zsh" '.zshrc'    "$HOME"
 link_same_single "$(pwd)/zsh" '.zsh_plugins.txt'    "$HOME"
-link_same_single "$(pwd)/zsh/starship.toml' "$HOME/.config"
+link_same_single "$(pwd)/zsh" 'starship.toml' "$HOME/.config"
 
 echo -e "\033[0;32mLinked all configuration files\033[0m"
