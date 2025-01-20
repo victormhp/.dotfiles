@@ -153,27 +153,13 @@ return {
 				filetypes = { "go", "gomod", "gowork", "gotempl" },
 			})
 
-			-- Templ
-			lspconfig["templ"].setup({
-				on_attach = on_attach,
-				capabilities = capabilities,
-			})
-			vim.filetype.add({ extension = { templ = "templ" } })
-
 			-- C
 			lspconfig["clangd"].setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
 				cmd = {
 					"clangd",
-					"--fallback-style=webkit",
 				},
-			})
-
-			-- Rust
-			lspconfig["rust_analyzer"].setup({
-				on_attach = on_attach,
-				capabilities = capabilities,
 			})
 
 			-- Typescript
