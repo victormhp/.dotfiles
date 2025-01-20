@@ -1,6 +1,4 @@
 * {
-    font:   "JetBrainsMono Nerd Font 12";
-
     bg0:     #1f1f28;
     bg1:     #3c3c51;
     fg0:     #ddd8bb;
