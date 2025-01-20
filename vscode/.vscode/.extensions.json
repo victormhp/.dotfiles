@@ -1,0 +1,12 @@
+{
+	// List of extensions which should be recommended for users of this workspace.
+	"recommendations": [
+		"qufiwefefwoyn.kanagawa", // theme
+		"vscode-icons-team.vscode-icons", // icon theme
+		"ms-azuretools.vscode-docker",
+		"rangav.vscode-thunder-client",
+	],
+	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
+	"unwantedRecommendations": [
+	]
+}
