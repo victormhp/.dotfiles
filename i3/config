@@ -9,7 +9,7 @@ set $file_manager nautilus
 set $launcher ~/.config/rofi/launcher.sh &
 set $mod Mod4
 
-# bordergap
+# border gap
 for_window [class=".*"] border pixel 0
 
 # Font for window titles. Will also be used by the bar unless a different font

@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# Utilities for other scripts
-
 set -euo pipefail
 
 # Usage:
