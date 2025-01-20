@@ -4,5 +4,6 @@ return {
 		"rose-pine/nvim",
 		name = "rose-pine",
 	},
-	{ "EdenEast/nightfox.nvim" }
+	{ "EdenEast/nightfox.nvim" },
+	{ "rebelot/kanagawa.nvim" }
 }

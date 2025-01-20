@@ -17,6 +17,7 @@ end
 
 -- Uncomment the colorscheme to use
 -- local colorscheme = get_if_available('carbonfox')
-local colorscheme = get_if_available('rose-pine')
+-- local colorscheme = get_if_available('rose-pine')
+local colorscheme = get_if_available('kanagawa')
 
 return colorscheme
