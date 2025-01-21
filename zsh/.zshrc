@@ -3,18 +3,19 @@ alias c="clear"
 alias cls="clear"
 alias vi="nvim"
 alias vim="nvim"
-alias jn="jupyter notebook"
-alias ls="ls --color=auto"
 alias cat="batcat"
+alias copy="xclip -selection cliboard"
 
-alias l="exa --icons -s type"
+alias ls="exa --icons -s type"
 alias ll="exa -l --icons -s type"
 alias la="exa -la --icons -s type"
 alias lt="exa --tree --level=2 --icons -s type"
-
-alias copy="xclip -selection cliboard"
+alias lta="exa --tree --level=2 -a --icons -s type"
 
 alias lg="lazygit"
+alias jn="jupyter notebook"
+
+alias nomacs="flatpak run org.nomacs.ImageLounge"
 
 # tmux-sessionizer
 bindkey -s "^f" "tmux-sessionizer\n"

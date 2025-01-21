@@ -12,4 +12,5 @@
     "window.customTitleBarVisibility": "auto",
     "workbench.sideBar.location": "right",
     "editor.minimap.enabled": false,
+    "workbench.startupEditor": "none",
 }
