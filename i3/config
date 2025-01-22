@@ -188,6 +188,10 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# app for each workspace
+exec --no-startup-id i3-msg 'workspace 1; exec firefox'
+exec --no-startup-id i3-msg 'workspace 2; exec ghostty'
+
 bar {
     font pango:Roboto 10
     position top
