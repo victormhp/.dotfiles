@@ -16,6 +16,8 @@ alias lg="lazygit"
 alias jn="jupyter notebook"
 
 alias nomacs="flatpak run org.nomacs.ImageLounge"
+alias obsidian="flatpak run md.obsidian.Obsidian"
+alias zen="flatpak run app.zen_browser.zen"
 
 # tmux-sessionizer
 bindkey -s "^f" "tmux-sessionizer\n"
