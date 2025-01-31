@@ -26,7 +26,7 @@ bindkey -s "^f" "tmux-sessionizer\n"
 
 # paths
 export PATH=$PATH:$HOME/.local/bin
-export PATH=$PATH:/opt/nvim-linux64/bin
+export PATH=$PATH:/usr/local/nvim/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/usr/local/zig
 export PATH=$PATH:/usr/local/Postman/
