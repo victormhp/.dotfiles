@@ -60,6 +60,5 @@ map("n", "<leader>l", [[:s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>")
 
 -- Markdown
-map("n", "<leader>mk", "<cmd>MarkdownPreview<CR>")
-map("n", "<leader>ms", "<cmd>MarkdownPreviewStop<CR>")
-map("n", "<leader>mt", "<cmd>MarkdownPreviewToggle<CR>")
+map("n", "<leader>po", "<cmd>PeekOpen<CR>")
+map("n", "<leader>pc", "<cmd>PeekClose<CR>")
