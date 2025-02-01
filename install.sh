@@ -14,6 +14,7 @@ link_same        "$(pwd)/wallpapers"  "$HOME/Pictures/wallpapers"
 link_same_files  "$(pwd)/nvim"       "$HOME/.config/nvim"
 link_same_files  "$(pwd)/vscode"     "$HOME/.config/Code/User"
 link_same_files  "$(pwd)/i3"         "$HOME/.config/i3"
+link_same_files  "$(pwd)/i3status"   "$HOME/.config/i3status"
 
 # Link just one file
 link_same_single "$(pwd)/tmux"     '.tmux.conf'          "$HOME"
