@@ -94,6 +94,7 @@ return {
 			capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 			local lspconfig = require("lspconfig")
+
 			-- Lua
 			lspconfig["lua_ls"].setup({
 				on_attach = on_attach,
@@ -117,30 +118,16 @@ return {
 			})
 
 			-- Python
-			lspconfig["pylsp"].setup({
-				on_attach = on_attach,
-				capabilities = capabilities,
+			lspconfig["pyright"].setup({
 				settings = {
-					pylsp = {
-						plugins = {
-							flake8 = {
-								enabled = true,
-								maxLineLength = 120,
-							},
-							-- Disable plugins overlapping with flake8
-							pycodestyle = {
-								enabled = false,
-							},
-							mccabe = {
-								enabled = false,
-							},
-							pyflakes = {
-								enabled = false,
-							},
-							-- Use Black as the formatter
-							autopep8 = {
-								enabled = false,
-							},
+					pyright = {
+						-- Using Ruff's import organizer
+						disableOrganizeImports = true,
+					},
+					python = {
+						analysis = {
+							-- Ignore all files for analysis to exclusively use Ruff for linting
+							ignore = { "*" },
 						},
 					},
 				},

@@ -15,8 +15,8 @@ return {
 					-- Lua
 					formatting.stylua,
 					-- Python
-					formatting.black,
-					formatting.isort,
+					require("none-ls.formatting.ruff"),
+					require("none-ls.formatting.ruff_format"),
 					-- Go
 					formatting.gofumpt,
 					formatting.goimports_reviser,
