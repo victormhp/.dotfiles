@@ -1,6 +1,3 @@
-# Add deno completions to search path
-if [[ ":$FPATH:" != *":/home/pollo/.zsh/completions:"* ]]; then export FPATH="/home/pollo/.zsh/completions:$FPATH"; fi
-
 # Alias
 alias c="clear"
 alias cls="clear"
@@ -15,7 +12,7 @@ alias lt="exa --tree --level=2 --icons -s type"
 alias lta="exa --tree --level=2 -a --icons -s type"
 
 alias lg="lazygit"
-alias jn="jupyter notebook"
+alias jn="jupyter-notebook"
 
 alias nomacs="flatpak run org.nomacs.ImageLounge"
 alias obsidian="flatpak run md.obsidian.Obsidian"
@@ -28,13 +25,8 @@ bindkey -s "^f" "tmux-sessionizer\n"
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:/usr/local/nvim/bin
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:/usr/local/zig
-export PATH=$PATH:/usr/local/Postman/
-
-eval "$(starship init zsh)"
-
-source $HOME/.antidote/antidote.zsh
-antidote load
 
 # fnm
 FNM_PATH="/home/pollo/.local/share/fnm"
@@ -45,6 +37,12 @@ fi
 
 # deno
 . "/home/pollo/.deno/env"
-# Initialize zsh completions (added by deno install script)
-autoload -Uz compinit
-compinit
+
+eval "$(starship init zsh)"
+
+source $HOME/.antidote/antidote.zsh
+antidote load
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
