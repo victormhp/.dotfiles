@@ -5,8 +5,9 @@ This repository contains the configuration files for various tools and applicati
 
 ## Tools
 
-- NeoVim
+- Neovim
 - i3
 - Rofi
-- Ghostty
+- picom
+- ghostty
 - zsh

@@ -9,6 +9,10 @@ bindsym $mod+Return exec $terminal
 bindsym $mod+e exec $file_manager
 bindsym $mod+space exec $launcher
 
+# Gaps
+gaps inner 6
+gaps outer 3
+
 # No borders
 for_window [class=".*"] border pixel 0
 for_window [title="^.*"] border pixel 0

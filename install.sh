@@ -6,6 +6,7 @@ source './utils.sh'
 
 # Link entire configuration folders
 link_same        "$(pwd)/ghostty"     "$HOME/.config/ghostty"
+link_same        "$(pwd)/picom"     "$HOME/.config/picom"
 link_same        "$(pwd)/rofi"        "$HOME/.config/rofi"
 link_same        "$(pwd)/wallpapers"  "$HOME/Pictures/wallpapers"
 
