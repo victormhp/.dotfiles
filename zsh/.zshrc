@@ -24,6 +24,7 @@ bindkey -s "^f" "tmux-sessionizer\n"
 # paths
 export PATH=$PATH:$HOME/.local/bin
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(fnm env --use-on-cd --shell zsh)"
 
 # zsh stuff
 eval "$(starship init zsh)"
