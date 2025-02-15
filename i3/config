@@ -16,6 +16,7 @@ gaps outer 3
 # No borders
 for_window [class=".*"] border pixel 0
 for_window [title="^.*"] border pixel 0
+for_window [floating] border pixel 0
 
 # No focus peek markdown preview
 no_focus [title="^Peek preview$"]
