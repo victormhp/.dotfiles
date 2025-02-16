@@ -6,12 +6,13 @@ source './utils.sh'
 
 # Link entire configuration folders
 link_same        "$(pwd)/ghostty"     "$HOME/.config/ghostty"
-link_same        "$(pwd)/picom"     "$HOME/.config/picom"
+link_same        "$(pwd)/picom"       "$HOME/.config/picom"
 link_same        "$(pwd)/rofi"        "$HOME/.config/rofi"
 link_same        "$(pwd)/wallpapers"  "$HOME/Pictures/wallpapers"
 
 # Link just files instead of entire folders to avoid
 # polluting this dotfiles directory with generated files
+link_same_files  "$(pwd)/nitrogen"   "$HOME/.config/nitrogen"
 link_same_files  "$(pwd)/nvim"       "$HOME/.config/nvim"
 link_same_files  "$(pwd)/vscode"     "$HOME/.config/Code/User"
 link_same_files  "$(pwd)/i3"         "$HOME/.config/i3"
