@@ -85,6 +85,7 @@ return {
 						-- Kind icons
 						vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 						vim_item.menu = ({
+							copilot = "[]",
 							nvim_lsp = "[LSP]",
 							luasnip = "[Snippet]",
 							buffer = "[Buffer]",
@@ -94,6 +95,7 @@ return {
 					end,
 				},
 				sources = {
+					{ name = "copilot" },
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
 					{ name = "buffer" },
