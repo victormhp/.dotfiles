@@ -160,6 +160,15 @@ return {
 				capabilities = capabilities,
 				root_dir = lspconfig.util.root_pattern("package.json"),
 				single_file_support = true,
+				initOptions = {
+					disableSuggestions = true,
+				},
+			})
+
+			-- Eslint
+			lspconfig["eslint"].setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
 			})
 
 			-- Deno
