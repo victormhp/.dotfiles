@@ -2,3 +2,6 @@
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "../"
+
+[aws]
+disabled = true
