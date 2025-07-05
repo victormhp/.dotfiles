@@ -11,6 +11,9 @@ alias la="eza -la --icons"
 alias lt="eza --tree --level=2 --icons"
 alias lta="eza --tree --level=2 -a --icons"
 
+alias day="brightnessctl set 100%"
+alias night="brightnessctl set 5%"
+
 alias lg="lazygit"
 alias jn="jupyter-notebook"
 
