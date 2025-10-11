@@ -17,13 +17,6 @@ return {
 		config = function()
 			-- Set up Mason before anything else
 			require("mason").setup()
-			require("mason-lspconfig").setup({
-				ensure_installed = {
-					"lua_ls",
-					"ts_ls",
-				},
-				automatic_installation = true,
-			})
 
 			-- Quick access via keymap
 			require("helpers.keys").map("n", "<leader>M", "<cmd>Mason<cr>", "Show Mason")
@@ -220,6 +213,15 @@ return {
 				on_attach = on_attach,
 				capabilities = capabilities,
 			})
+
+			require('lspconfig').gleam.setup({
+				cmd = { "gleam", "lsp" },
+				filetypes = { "gleam" },
+				root_dir = require("lspconfig.util").root_pattern("gleam.toml", ".git"),
+				on_attach = on_attach,
+				capabilities = capabilities,
+			})
+
 		end,
 	},
 }

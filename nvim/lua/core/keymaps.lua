@@ -33,6 +33,9 @@ map("v", ">", ">gv")
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 
+-- Move previuos file
+map("n", "<leader>b", "<C-^>")
+
 -- Switch between light and dark modes
 map("n", "<leader>ut", function()
 	if vim.o.background == "dark" then
