@@ -10,6 +10,7 @@ local opts = {
 	linebreak = true,
 	colorcolumn = "100",
 	termguicolors = true,
+	clipboard = "unnamedplus"
 }
 
 -- Set options from table
