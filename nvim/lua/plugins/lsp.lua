@@ -91,20 +91,14 @@ return {
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-			local lspconfig = require("lspconfig")
-
 			-- Lua
-			lspconfig["lua_ls"].setup({
+			vim.lsp.config("lua_ls", {
 				on_attach = on_attach,
 				capabilities = capabilities,
 				settings = {
 					Lua = {
-						completion = {
-							callSnippet = "Replace",
-						},
-						diagnostics = {
-							globals = { "vim" },
-						},
+						completion = { callSnippet = "Replace" },
+						diagnostics = { globals = { "vim" } },
 						workspace = {
 							library = {
 								[vim.fn.expand("$VIMRUNTIME/lua")] = true,
@@ -116,112 +110,90 @@ return {
 			})
 
 			-- Python
-			lspconfig["pyright"].setup({
+			vim.lsp.config("pyright", {
+				on_attach = on_attach,
+				capabilities = capabilities,
 				settings = {
-					pyright = {
-						-- Using Ruff's import organizer
-						disableOrganizeImports = true,
-					},
-					python = {
-						analysis = {
-							-- Ignore all files for analysis to exclusively use Ruff for linting
-							ignore = { "*" },
-						},
-					},
+					pyright = { disableOrganizeImports = true },
+					python = { analysis = { ignore = { "*" } } },
 				},
 			})
 
-			lspconfig["ruff"].setup({
+			vim.lsp.config("ruff", {
 				on_attach = on_attach,
 				capabilities = capabilities,
 			})
 
 			-- Go
-			lspconfig["gopls"].setup({
+			vim.lsp.config("gopls", {
 				on_attach = on_attach,
 				capabilities = capabilities,
 				filetypes = { "go", "gomod", "gowork", "gotempl" },
 			})
 
 			-- C
-			lspconfig["clangd"].setup({
+			vim.lsp.config("clangd", {
 				on_attach = on_attach,
 				capabilities = capabilities,
-				cmd = {
-					"clangd",
-				},
+				cmd = { "clangd" },
 			})
 
 			-- Typescript
-			lspconfig["ts_ls"].setup({
+			vim.lsp.config("ts_ls", {
 				on_attach = on_attach,
 				capabilities = capabilities,
-				root_dir = lspconfig.util.root_pattern("package.json"),
+				root_dir = vim.fs.root(0, { "package.json" }),
 				single_file_support = true,
-				initOptions = {
-					disableSuggestions = true,
-				},
+				init_options = { disableSuggestions = true },
 			})
 
 			-- Eslint
-			lspconfig["eslint"].setup({
+			vim.lsp.config("eslint", {
 				on_attach = on_attach,
 				capabilities = capabilities,
-			})
-
-			-- Deno
-			lspconfig["denols"].setup({
-				on_attach = on_attach,
-				capabilities = capabilities,
-				root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
 			})
 
 			-- CSS
-			lspconfig["cssls"].setup({
+			vim.lsp.config("cssls", {
 				on_attach = on_attach,
 				capabilities = capabilities,
 				settings = {
-					css = {
-						validate = true,
-						lint = {
-							unknownAtRules = "ignore",
-						},
-					},
-					scss = {
-						validate = true,
-						lint = {
-							unknownAtRules = "ignore",
-						},
-					},
+					css = { validate = true, lint = { unknownAtRules = "ignore" } },
+					scss = { validate = true, lint = { unknownAtRules = "ignore" } },
 				},
 			})
 
 			-- Tailwind
-			lspconfig["tailwindcss"].setup({
+			vim.lsp.config("tailwindcss", {
 				on_attach = on_attach,
 				capabilities = capabilities,
 			})
 
 			-- Svelte
-			lspconfig["svelte"].setup({
+			vim.lsp.config("svelte", {
 				on_attach = on_attach,
 				capabilities = capabilities,
 			})
 
 			-- Astro
-			lspconfig["astro"].setup({
+			vim.lsp.config("astro", {
 				on_attach = on_attach,
 				capabilities = capabilities,
 			})
 
-			require('lspconfig').gleam.setup({
-				cmd = { "gleam", "lsp" },
-				filetypes = { "gleam" },
-				root_dir = require("lspconfig.util").root_pattern("gleam.toml", ".git"),
-				on_attach = on_attach,
-				capabilities = capabilities,
+			vim.lsp.enable({
+				"lua_ls",
+				"pyright",
+				"ruff",
+				"gopls",
+				"clangd",
+				"ts_ls",
+				"eslint",
+				"cssls",
+				"tailwindcss",
+				"svelte",
+				"astro",
 			})
-
 		end,
 	},
 }
