@@ -11,12 +11,16 @@ return {
 		config = function()
 			require("telescope").setup({
 				defaults = {
+					preview = {
+						treesitter = false,
+					},
 					mappings = {
 						i = {
 							["<C-u>"] = false,
 							["<C-d>"] = false,
 						},
 					},
+					layout_strategy = "vertical",
 				},
 			})
 
