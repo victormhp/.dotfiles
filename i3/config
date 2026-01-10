@@ -197,14 +197,14 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # app for each workspace
-exec --no-startup-id i3-msg 'workspace 1; exec ghostty'
-exec --no-startup-id i3-msg 'workspace 2; exec flatpak run app.zen_browser.zen'
-exec --no-startup-id i3-msg 'workspace 3; exec flatpak run md.obsidian.Obsidian'
+exec --no-startup-id i3-msg 'workspace 1; exec firefox'
+exec --no-startup-id i3-msg 'workspace 2; exec ghostty'
 
 bar {
     font pango:Roboto 10
     position top
     status_command i3status
+    tray_output primary
 }
 
 exec_always --no-startup-id ~/.config/i3/autostart.sh

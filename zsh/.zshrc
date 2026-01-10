@@ -25,12 +25,12 @@ bindkey -s "^f" "tmux-sessionizer\n"
 
 # paths
 export PATH=$PATH:$HOME/.local/bin
-# fnm
-FNM_PATH="/home/pollo/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="$FNM_PATH:$PATH"
-  eval "`fnm env`"
-fi
+export PATH=/usr/local/bin:$PATH
+
+# brew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+export PATH="/home/linuxbrew/.linuxbrew/opt/zig@0.14/bin:$PATH"
+eval "$(fnm env --use-on-cd --shell zsh)"
 
 # zsh stuff
 eval "$(starship init zsh)"
@@ -38,11 +38,3 @@ eval "$(starship init zsh)"
 source $HOME/.antidote/antidote.zsh
 antidote load
 
-
-
-# bun completions
-[ -s "/home/pollo/.bun/_bun" ] && source "/home/pollo/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
