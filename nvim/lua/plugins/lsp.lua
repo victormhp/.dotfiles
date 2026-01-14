@@ -147,8 +147,8 @@ return {
 				init_options = { disableSuggestions = true },
 			})
 
-			-- Eslint
-			vim.lsp.config("eslint", {
+			-- Biome
+			vim.lsp.config("biome", {
 				on_attach = on_attach,
 				capabilities = capabilities,
 			})
