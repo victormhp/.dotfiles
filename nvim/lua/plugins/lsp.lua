@@ -40,9 +40,7 @@ return {
 			-- Diagnostic config
 			local config = {
 				virtual_text = true,
-				signs = {
-					active = signs,
-				},
+				signs = signs,
 				update_in_insert = true,
 				underline = true,
 				severity_sort = true,
@@ -58,7 +56,6 @@ return {
 			vim.diagnostic.config(config)
 
 			-- This function gets run when an LSP connects to a particular buffer.
-			local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 			local on_attach = function(client, bufnr)
 				local lsp_map = require("helpers.keys").lsp_map
 
@@ -75,13 +72,6 @@ return {
 				lsp_map("<leader>ln", vim.lsp.buf.signature_help, bufnr, "Signature Help")
 				lsp_map("<leader>ls", require("telescope.builtin").lsp_document_symbols, bufnr, "Document symbols")
 				lsp_map("<leader>le", vim.diagnostic.open_float, bufnr, "Show Diagnostics")
-
-				-- Create a command `:Format` local to the LSP buffer
-				vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
-					vim.lsp.buf.format()
-				end, { desc = "Format current buffer with LSP" })
-
-				lsp_map("<leader>ff", "<cmd>Format<cr>", bufnr, "Format")
 
 				-- Attach and configure vim-illuminate
 				require("illuminate").on_attach(client)
@@ -128,7 +118,6 @@ return {
 			vim.lsp.config("gopls", {
 				on_attach = on_attach,
 				capabilities = capabilities,
-				filetypes = { "go", "gomod", "gowork", "gotempl" },
 			})
 
 			-- C
@@ -142,8 +131,6 @@ return {
 			vim.lsp.config("ts_ls", {
 				on_attach = on_attach,
 				capabilities = capabilities,
-				root_dir = vim.fs.root(0, { "package.json" }),
-				single_file_support = true,
 				init_options = { disableSuggestions = true },
 			})
 
@@ -188,7 +175,7 @@ return {
 				"gopls",
 				"clangd",
 				"ts_ls",
-				"eslint",
+				"biome",
 				"cssls",
 				"tailwindcss",
 				"svelte",
