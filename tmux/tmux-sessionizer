@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 if [[ $# -eq 1 ]]; then
     session=$1
 else
-    session=$(find ~ ~/workspace/ ~/.dotfiles/ -mindepth 1 -maxdepth 1 -type d | fzf)
+    roots=("$HOME")
+    for root in "$HOME/workspace" "$HOME/.dotfiles"; do
+        [[ ! -d $root ]] || roots+=("$root")
+    done
+    session=$(find "${roots[@]}" -mindepth 1 -maxdepth 1 -type d | fzf) || exit 0
 fi
 
 if [[ -z $session ]]; then
@@ -11,16 +17,14 @@ if [[ -z $session ]]; then
 fi
 
 
-session_name=$(basename "$session" | tr . _)
-tmux_running=$(pgrep tmux)
-
-if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    tmux new-session -s $session_name -c $session
-    exit 0
-fi
+session_name=$(basename "$session" | tr '.:' '__')
 
 if ! tmux has-session -t="$session_name" 2> /dev/null; then
-    tmux new-session -ds "$session_name" -c "$session" 
+    tmux new-session -ds "$session_name" -c "$session"
 fi
 
-tmux switch-client -t "$session_name"
+if [[ -z ${TMUX:-} ]]; then
+    exec tmux attach-session -t "=$session_name"
+else
+    exec tmux switch-client -t "=$session_name"
+fi

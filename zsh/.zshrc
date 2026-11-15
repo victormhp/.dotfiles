@@ -3,7 +3,7 @@ alias c="clear"
 alias cls="clear"
 alias vi="nvim"
 alias vim="nvim"
-alias copy="xclip -selection cliboard"
+alias copy="xclip -selection clipboard"
 
 alias ls="eza --icons"
 alias ll="eza -l --icons"
@@ -26,8 +26,6 @@ export PATH=/usr/local/bin:$PATH
 
 # brew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
-export PATH="/home/linuxbrew/.linuxbrew/opt/zig@0.14/bin:$PATH"
-eval "$(fnm env --use-on-cd --shell zsh)"
 
 # zsh stuff
 eval "$(starship init zsh)"
@@ -35,3 +33,4 @@ eval "$(starship init zsh)"
 source $HOME/.antidote/antidote.zsh
 antidote load
 
+eval "$(direnv hook zsh)"
