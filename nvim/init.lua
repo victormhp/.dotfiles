@@ -1,11 +1,11 @@
--- Handle plugins with lazy.nvim
-require("core.lazy")
+-- Editor options must be set before plugins configure themselves.
+require("core.options")
+
+-- Register native packages and configure plugins.
+require("core.packages")
 
 -- General Neovim keymaps
 require("core.keymaps")
 
--- Other options
-require("core.options")
-
--- Colorizer
-require("colorizer").setup()
+-- Theme packages are available after registration.
+vim.cmd.colorscheme(require("helpers.colorscheme"))

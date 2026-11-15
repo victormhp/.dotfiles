@@ -1,9 +1,2 @@
-return {
-	"norcalli/nvim-colorizer.lua",
-	{
-		"norcalli/nvim-terminal.lua",
-		config = function()
-			require("terminal").setup()
-		end,
-	},
-}
+require("colorizer").setup()
+require("terminal").setup()
